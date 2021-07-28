@@ -1,6 +1,6 @@
 <?php
 
-namespace HDSSolutions\Finpar\Empty;
+namespace HDSSolutions\Laravel\Empty;
 
 class Facade extends \Illuminate\Support\Facades\Facade {
     /**
