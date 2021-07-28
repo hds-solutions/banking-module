@@ -2,26 +2,26 @@
 
 namespace HDSSolutions\Laravel\DataTables;
 
-use HDSSolutions\Laravel\Models\Empty as Resource;
+use HDSSolutions\Laravel\Models\Bank as Resource;
 use Yajra\DataTables\Html\Column;
 
-class EmptyDataTable extends Base\DataTable {
+class BankDataTable extends Base\DataTable {
 
     public function __construct() {
         parent::__construct(
             Resource::class,
-            route('backend.empties'),
+            route('backend.banks'),
         );
     }
 
     protected function getColumns() {
         return [
             Column::computed('id')
-                ->title( __('empty::empty.id.0') )
+                ->title( __('bank::bank.id.0') )
                 ->hidden(),
 
             Column::make('name')
-                ->title( __('empty::empty.name.0') ),
+                ->title( __('bank::bank.name.0') ),
 
             Column::make('actions'),
         ];

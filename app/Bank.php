@@ -2,7 +2,7 @@
 
 namespace HDSSolutions\Laravel;
 
-class Empty {
+class Bank {
 
     //
 

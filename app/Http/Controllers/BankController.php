@@ -3,11 +3,11 @@
 namespace HDSSolutions\Laravel\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use HDSSolutions\Laravel\DataTables\EmptyDataTable as DataTable;
+use HDSSolutions\Laravel\DataTables\BankDataTable as DataTable;
 use HDSSolutions\Laravel\Http\Request;
-use HDSSolutions\Laravel\Models\Empty as Resource;
+use HDSSolutions\Laravel\Models\Bank as Resource;
 
-class EmptyController extends Controller {
+class BankController extends Controller {
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +17,7 @@ class EmptyController extends Controller {
         // load resources
         if ($request->ajax()) return $dataTable->ajax();
         // return view with dataTable
-        return $dataTable->render('empties::empties.index', [ 'count' => Resource::count() ]);
+        return $dataTable->render('banks::banks.index', [ 'count' => Resource::count() ]);
     }
 
     /**
@@ -27,7 +27,7 @@ class EmptyController extends Controller {
      */
     public function create() {
         // show create form
-        return view('empties::empties.create');
+        return view('banks::banks.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class EmptyController extends Controller {
                 ->withInput();
 
         // redirect to list
-        return redirect()->route('backend.empties');
+        return redirect()->route('backend.banks');
     }
 
     /**
@@ -59,7 +59,7 @@ class EmptyController extends Controller {
      */
     public function show(Resource $resource) {
         // redirect to list
-        return redirect()->route('backend.empties');
+        return redirect()->route('backend.banks');
     }
 
     /**
@@ -70,7 +70,7 @@ class EmptyController extends Controller {
      */
     public function edit(Resource $resource) {
         // show edit form
-        return view('empties::empties.edit', compact('resource'));
+        return view('banks::banks.edit', compact('resource'));
     }
 
     /**
@@ -92,7 +92,7 @@ class EmptyController extends Controller {
                 ->withInput();
 
         // redirect to list
-        return redirect()->route('backend.empties');
+        return redirect()->route('backend.banks');
     }
 
     /**
@@ -109,7 +109,7 @@ class EmptyController extends Controller {
             // redirect with errors
             return back();
         // redirect to list
-        return redirect()->route('backend.empties');
+        return redirect()->route('backend.banks');
     }
 
 }

@@ -2,6 +2,6 @@
 
 namespace HDSSolutions\Laravel\Models;
 
-class Empty extends X_Empty {
+class Bank extends X_Bank {
 
 }

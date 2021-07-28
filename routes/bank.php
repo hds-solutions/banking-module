@@ -9,8 +9,8 @@ Route::group([
     // name prefix
     $name_prefix = [ 'as' => 'backend' ];
 
-    // Route::resource('empties',    EmptyController::class,   $name_prefix)
-    //     ->parameters([ 'empties' => 'resource' ])
-    //     ->name('index', 'backend.empties');
+    // Route::resource('banks',    BankController::class,   $name_prefix)
+    //     ->parameters([ 'banks' => 'resource' ])
+    //     ->name('index', 'backend.banks');
 
 });

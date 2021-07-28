@@ -26,10 +26,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HDSSolutions\\Laravel\\EmptyModuleServiceProvider"
+                "HDSSolutions\\Laravel\\BankModuleServiceProvider"
             ],
             "aliases": {
-                "Empty": "HDSSolutions\\Laravel\\Empty\\Facade"
+                "Bank": "HDSSolutions\\Laravel\\Bank\\Facade"
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace HDSSolutions\Laravel\Empty;
+namespace HDSSolutions\Laravel\Bank;
 
 class Facade extends \Illuminate\Support\Facades\Facade {
     /**
@@ -10,7 +10,7 @@ class Facade extends \Illuminate\Support\Facades\Facade {
      */
     protected static function getFacadeAccessor() {
         //
-        return 'empty';
+        return 'bank';
     }
 
 }
