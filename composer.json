@@ -1,6 +1,6 @@
 {
-    "name": "hds-solutions/bank-module",
-    "description": "Bank module",
+    "name": "hds-solutions/banking-module",
+    "description": "Banking module",
     "type": "laravel-module",
     "license": "GNU GPLv3",
     "authors": [
@@ -26,10 +26,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HDSSolutions\\Laravel\\BankModuleServiceProvider"
+                "HDSSolutions\\Laravel\\BankingModuleServiceProvider"
             ],
             "aliases": {
-                "Bank": "HDSSolutions\\Laravel\\Bank\\Facade"
+                "Banking": "HDSSolutions\\Laravel\\Banking\\Facade"
             }
         }
     }

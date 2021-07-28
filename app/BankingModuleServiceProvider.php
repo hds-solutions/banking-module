@@ -4,10 +4,10 @@ namespace HDSSolutions\Laravel;
 
 use HDSSolutions\Laravel\Modules\ModuleServiceProvider;
 
-class BankModuleServiceProvider extends ModuleServiceProvider {
+class BankingModuleServiceProvider extends ModuleServiceProvider {
 
     protected array $middlewares = [
-        \HDSSolutions\Laravel\Http\Middleware\BankMenu::class,
+        \HDSSolutions\Laravel\Http\Middleware\BankingMenu::class,
     ];
 
     private $commands = [
@@ -17,15 +17,15 @@ class BankModuleServiceProvider extends ModuleServiceProvider {
     public function bootEnv():void {
         // enable config override
         $this->publishes([
-            module_path('config/bank.php') => config_path('bank.php'),
-        ], 'bank.config');
+            module_path('config/banking.php') => config_path('banking.php'),
+        ], 'banking.config');
 
         // load routes
-        $this->loadRoutesFrom( module_path('routes/bank.php') );
+        $this->loadRoutesFrom( module_path('routes/banking.php') );
         // load views
-        $this->loadViewsFrom( module_path('resources/views'), 'bank' );
+        $this->loadViewsFrom( module_path('resources/views'), 'banking' );
         // load translations
-        $this->loadTranslationsFrom( module_path('resources/lang'), 'bank' );
+        $this->loadTranslationsFrom( module_path('resources/lang'), 'banking' );
         // load migrations
         $this->loadMigrationsFrom( module_path('database/migrations') );
         // load seeders
@@ -38,11 +38,11 @@ class BankModuleServiceProvider extends ModuleServiceProvider {
             //
             require_once $helpers;
         // register singleton
-        app()->singleton(Bank::class, fn() => new Bank);
+        app()->singleton(Banking::class, fn() => new Banking);
         // register commands
         $this->commands( $this->commands );
         // merge configuration
-        $this->mergeConfigFrom( module_path('config/bank.php'), 'bank' );
+        $this->mergeConfigFrom( module_path('config/banking.php'), 'banking' );
     }
 
 }

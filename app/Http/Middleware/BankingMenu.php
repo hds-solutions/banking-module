@@ -5,18 +5,12 @@ namespace HDSSolutions\Laravel\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Route;
 
-class BankMenu {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
+class BankingMenu {
+
     public function handle($request, Closure $next) {
         // create a submenu
         $sub = backend()->menu()
-            ->add(__('bank::banks.nav'), [
+            ->add(__('banking::banks.nav'), [
                 // 'icon'  => 'cogs',
             ])->data('priority', 700);
 
@@ -30,7 +24,7 @@ class BankMenu {
 
     private function banks(&$menu) {
         if (Route::has('backend.banks'))
-            $menu->add(__('bank::banks.nav'), [
+            $menu->add(__('banking::banks.nav'), [
                 'route'     => 'backend.banks',
                 'icon'      => 'banks'
             ]);
