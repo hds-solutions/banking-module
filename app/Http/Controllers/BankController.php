@@ -24,7 +24,7 @@ class BankController extends Controller {
 
     public function create(Request $request) {
         // show create form
-        return view('banks::banks.create');
+        return view('banking::banks.create');
     }
 
     public function store(Request $request) {
@@ -48,7 +48,7 @@ class BankController extends Controller {
 
     public function edit(Request $request, Resource $resource) {
         // show edit form
-        return view('banks::banks.edit', compact('resource'));
+        return view('banking::banks.edit', compact('resource'));
     }
 
     public function update(Request $request, Resource $resource) {

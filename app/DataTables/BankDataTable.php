@@ -2,7 +2,7 @@
 
 namespace HDSSolutions\Laravel\DataTables;
 
-use HDSSolutions\Laravel\Models\Banking as Resource;
+use HDSSolutions\Laravel\Models\Bank as Resource;
 use Yajra\DataTables\Html\Column;
 
 class BankDataTable extends Base\DataTable {

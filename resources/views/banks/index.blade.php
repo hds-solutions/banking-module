@@ -1,7 +1,7 @@
 @extends('backend::layouts.master')
 
-@section('page-name', __('backend::banks.title'))
-@section('description', __('backend::banks.description'))
+@section('page-name', __('banking::banks.title'))
+@section('description', __('banking::banks.description'))
 
 @section('content')
 
@@ -10,11 +10,11 @@
         <div class="row">
             <div class="col-6 d-flex align-items-center">
                 <i class="fas fa-table mr-2"></i>
-                @lang('backend::banks.index')
+                @lang('banking::banks.index')
             </div>
             <div class="col-6 d-flex justify-content-end">
                 <a href="{{ route('backend.banks.create') }}"
-                    class="btn btn-sm btn-outline-primary">@lang('backend::banks.create')</a>
+                    class="btn btn-sm btn-outline-primary">@lang('banking::banks.create')</a>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
                 <p class="text-muted">
                     @lang('backend.empty.description')
                     <a href="{{ route('backend.banks.create') }}" class="text-custom">
-                        <ins>@lang('backend::banks.create')</ins>
+                        <ins>@lang('banking::banks.create')</ins>
                     </a>
                 </p>
             </div>

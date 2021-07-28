@@ -10,8 +10,8 @@ class BankingMenu {
     public function handle($request, Closure $next) {
         // create a submenu
         $sub = backend()->menu()
-            ->add(__('banking::banks.nav'), [
-                // 'icon'  => 'cogs',
+            ->add(__('banking::banking.nav'), [
+                'icon'  => 'university',
             ])->data('priority', 700);
 
         $this
@@ -26,7 +26,7 @@ class BankingMenu {
         if (Route::has('backend.banks'))
             $menu->add(__('banking::banks.nav'), [
                 'route'     => 'backend.banks',
-                'icon'      => 'banks'
+                'icon'      => 'building'
             ]);
 
         return $this;
