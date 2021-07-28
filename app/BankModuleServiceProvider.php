@@ -38,7 +38,7 @@ class BankModuleServiceProvider extends ModuleServiceProvider {
             //
             require_once $helpers;
         // register singleton
-        // app()->singleton(Bank::class, fn() => new Bank);
+        app()->singleton(Bank::class, fn() => new Bank);
         // register commands
         $this->commands( $this->commands );
         // merge configuration
