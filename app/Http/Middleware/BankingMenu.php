@@ -16,7 +16,10 @@ class BankingMenu {
 
         $this
             // append items to submenu
-            ->banks($sub);
+            ->banks($sub)
+            ->bank_accounts($sub)
+            ->deposit_slips($sub)
+            ->reconciliations($sub);
 
         // continue witn next middleware
         return $next($request);
@@ -27,6 +30,36 @@ class BankingMenu {
             $menu->add(__('banking::banks.nav'), [
                 'route'     => 'backend.banks',
                 'icon'      => 'building'
+            ]);
+
+        return $this;
+    }
+
+    private function bank_accounts(&$menu) {
+        if (Route::has('backend.bank_accounts'))
+            $menu->add(__('banking::bank_accounts.nav'), [
+                'route'     => 'backend.bank_accounts',
+                'icon'      => 'wallet'
+            ]);
+
+        return $this;
+    }
+
+    private function deposit_slips(&$menu) {
+        if (Route::has('backend.deposit_slips'))
+            $menu->add(__('banking::deposit_slips.nav'), [
+                'route'     => 'backend.deposit_slips',
+                'icon'      => 'donate'
+            ]);
+
+        return $this;
+    }
+
+    private function reconciliations(&$menu) {
+        if (Route::has('backend.reconciliations'))
+            $menu->add(__('banking::reconciliations.nav'), [
+                'route'     => 'backend.reconciliations',
+                'icon'      => 'signature'
             ]);
 
         return $this;

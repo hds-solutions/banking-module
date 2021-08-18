@@ -1,7 +1,7 @@
 @extends('banking::layouts.master')
 
-@section('page-name', __('banking::banks.title'))
-@section('description', __('banking::banks.description'))
+@section('page-name', __('banking::deposit_slips.title'))
+@section('description', __('banking::deposit_slips.description'))
 
 @section('content')
 
@@ -10,11 +10,11 @@
         <div class="row">
             <div class="col-6 d-flex align-items-center">
                 <i class="fas fa-table mr-2"></i>
-                @lang('banking::banks.index')
+                @lang('banking::deposit_slips.index')
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <a href="{{ route('backend.banks.create') }}"
-                    class="btn btn-sm btn-outline-primary">@lang('banking::banks.create')</a>
+                <a href="{{ route('backend.deposit_slips.create') }}"
+                    class="btn btn-sm btn-outline-primary">@lang('banking::deposit_slips.create')</a>
             </div>
         </div>
     </div>
@@ -23,8 +23,8 @@
             <div class="table-responsive">
                 {{ $dataTable->table() }}
                 @include('backend::components.datatable-actions', [
-                    'actions'   => [ 'update', 'delete' ],
-                    'label'     => '{resource.name}',
+                    'actions'   => [ 'show', 'update', 'delete' ],
+                    'label'     => '{resource.document_number}',
                 ])
             </div>
         @else
@@ -33,8 +33,8 @@
                 <h3>@lang('backend.empty.title')</h3>
                 <p class="text-muted">
                     @lang('backend.empty.description')
-                    <a href="{{ route('backend.banks.create') }}" class="text-custom">
-                        <ins>@lang('banking::banks.create')</ins>
+                    <a href="{{ route('backend.deposit_slips.create') }}" class="text-custom">
+                        <ins>@lang('banking::deposit_slips.create')</ins>
                     </a>
                 </p>
             </div>

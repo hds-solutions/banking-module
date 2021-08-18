@@ -3,6 +3,7 @@
 namespace HDSSolutions\Laravel;
 
 use HDSSolutions\Laravel\Modules\ModuleServiceProvider;
+use HDSSolutions\Laravel\Models\BankAccountMovement;
 
 class BankingModuleServiceProvider extends ModuleServiceProvider {
 
@@ -43,6 +44,8 @@ class BankingModuleServiceProvider extends ModuleServiceProvider {
         $this->commands( $this->commands );
         // merge configuration
         $this->mergeConfigFrom( module_path('config/banking.php'), 'banking' );
+        // alias models
+        $this->alias('BankAccountMovement', BankAccountMovement::class);
     }
 
 }
