@@ -63,7 +63,7 @@ export default class DepositSlip extends Document {
         // set total
         this.#total.value = total > 0 ? this.decimalize(total, this.decimals) : '';
         // fire format
-        if (total > 0) this.fire('blur', this.#total);
+        if (total > 0) DepositSlip.fire('blur', this.#total);
     }
 
 }
