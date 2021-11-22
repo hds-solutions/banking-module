@@ -5,7 +5,7 @@ namespace HDSSolutions\Laravel\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Route;
 
-class BankingMenu {
+class BankingMenu extends Base\Menu {
 
     public function handle($request, Closure $next) {
         // create a submenu
@@ -26,7 +26,7 @@ class BankingMenu {
     }
 
     private function banks(&$menu) {
-        if (Route::has('backend.banks'))
+        if (Route::has('backend.banks') && $this->can('banks.crud.index'))
             $menu->add(__('banking::banks.nav'), [
                 'route'     => 'backend.banks',
                 'icon'      => 'building'
@@ -36,7 +36,7 @@ class BankingMenu {
     }
 
     private function bank_accounts(&$menu) {
-        if (Route::has('backend.bank_accounts'))
+        if (Route::has('backend.bank_accounts') && $this->can('bank_accounts.crud.index'))
             $menu->add(__('banking::bank_accounts.nav'), [
                 'route'     => 'backend.bank_accounts',
                 'icon'      => 'wallet'
@@ -46,7 +46,7 @@ class BankingMenu {
     }
 
     private function deposit_slips(&$menu) {
-        if (Route::has('backend.deposit_slips'))
+        if (Route::has('backend.deposit_slips') && $this->can('deposit_slips.crud.index'))
             $menu->add(__('banking::deposit_slips.nav'), [
                 'route'     => 'backend.deposit_slips',
                 'icon'      => 'donate'
@@ -56,7 +56,7 @@ class BankingMenu {
     }
 
     private function reconciliations(&$menu) {
-        if (Route::has('backend.reconciliations'))
+        if (Route::has('backend.reconciliations') && $this->can('reconciliations.crud.index'))
             $menu->add(__('banking::reconciliations.nav'), [
                 'route'     => 'backend.reconciliations',
                 'icon'      => 'signature'

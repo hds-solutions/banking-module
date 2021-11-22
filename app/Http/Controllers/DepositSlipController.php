@@ -60,7 +60,7 @@ class DepositSlipController extends Controller {
         $checks = Check::deposited(false)->get();
 
         $highs = [
-            'document_number'   => Resource::nextDocumentNumber(),
+            'document_number'   => Resource::nextDocumentNumber() ?? '00000001',
         ];
 
         // show create form

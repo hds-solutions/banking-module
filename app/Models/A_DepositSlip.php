@@ -10,9 +10,9 @@ use Illuminate\Validation\Validator;
 abstract class A_DepositSlip extends X_DepositSlip implements Document {
     use HasDocumentActions;
 
-    public final static function nextDocumentNumber():string {
+    public final static function nextDocumentNumber():?string {
         // return next document number for specified stamping
-        return str_increment(self::withTrashed()->max('document_number') ?? null);
+        return str_increment(self::withTrashed()->max('document_number'));
     }
 
     public final function bankAccount() {

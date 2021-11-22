@@ -15,6 +15,9 @@ class BankAccountMovementController extends Controller {
     }
 
     public function create(Request $request) {
+        // force company selection
+        if (!backend()->companyScoped()) return view('backend::layouts.master', [ 'force_company_selector' => true ]);
+
         // load bank_accounts
         $bank_accounts = BankAccount::with([
             'bank',
@@ -27,9 +30,6 @@ class BankAccountMovementController extends Controller {
     }
 
     public function store(Request $request) {
-        // cast to boolean
-        // $request->merge([ 'show_home' => $request->show_home == 'on' ]);
-
         // create resource
         $resource = new Resource( $request->input() + [ 'confirmed' => true ] );
 

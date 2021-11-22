@@ -53,7 +53,7 @@ class ReconciliationController extends Controller {
         $checks = Check::deposited()->paid(false)->get();
 
         $highs = [
-            'document_number'   => Resource::nextDocumentNumber(),
+            'document_number'   => Resource::nextDocumentNumber() ?? '00000001',
         ];
 
         // show create form

@@ -35,7 +35,7 @@
     {{-- helper="banking::deposit_slip.cash_amount.?" --}}>
 
     <x-backend-form-foreign :resource="$resource ?? null" name="cash_book_id" secondary
-        foreign="cash_books" :values="$cash_books" foreign-add-label="banking::cash_books.add"
+        foreign="cash_books" :values="$cash_books" foreign-add-label="cash::cash_books.add"
         :default="isset($resource) ? $resource->cash?->cash_book_id : null"
 
         label="banking::deposit_slip.cash_book_id.0"

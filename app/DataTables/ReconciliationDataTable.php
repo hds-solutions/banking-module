@@ -3,15 +3,18 @@
 namespace HDSSolutions\Laravel\DataTables;
 
 use HDSSolutions\Laravel\Models\Reconciliation as Resource;
+use HDSSolutions\Laravel\Traits\DatatableAsDocument;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\Html\Column;
 
 class ReconciliationDataTable extends Base\DataTable {
+    use DatatableAsDocument;
 
     protected array $with = [
     ];
 
     protected array $orderBy = [
+        'document_status'   => 'asc',
         'transacted_at'     => 'desc',
     ];
 

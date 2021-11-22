@@ -23,6 +23,7 @@
             <div class="table-responsive">
                 {{ $dataTable->table() }}
                 @include('backend::components.datatable-actions', [
+                    'resource'  => 'deposit_slips',
                     'actions'   => [ 'show', 'update', 'delete' ],
                     'label'     => '{resource.document_number}',
                 ])
