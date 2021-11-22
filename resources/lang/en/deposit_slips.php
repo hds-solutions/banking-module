@@ -3,7 +3,7 @@
     'nav'           => 'Deposit Slips',
 
     'title'         => 'Deposit Slips',
-    'description'   => 'Deposit Slips description',
+    'description'   => '',
 
     'index'         => 'Deposit Slips list',
     'create'        => 'Create new Deposit Slip',
@@ -12,7 +12,6 @@
     'edit'          => 'Edit Deposit Slip',
 
     'save'          => 'Save',
-    'save-create'   => 'Save & Import Lines',
     'cancel'        => 'Cancel',
 
 ];

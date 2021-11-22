@@ -3,7 +3,7 @@
     'nav'           => 'Bank Accounts',
 
     'title'         => 'Bank Accounts',
-    'description'   => 'Bank Accounts description',
+    'description'   => '',
 
     'index'         => 'Bank Accounts list',
     'create'        => 'Create new Bank Account',
@@ -12,7 +12,6 @@
     'edit'          => 'Edit Bank Account',
 
     'save'          => 'Save',
-    'save-create'   => 'Save & Import Lines',
     'cancel'        => 'Cancel',
 
 ];

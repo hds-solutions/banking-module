@@ -3,7 +3,7 @@
     'nav'           => 'Banks',
 
     'title'         => 'Banks',
-    'description'   => 'Banks description',
+    'description'   => '',
 
     'index'         => 'Banks list',
     'create'        => 'Create new Bank',
@@ -12,7 +12,6 @@
     'edit'          => 'Edit Bank',
 
     'save'          => 'Save',
-    'save-create'   => 'Save & Import Lines',
     'cancel'        => 'Cancel',
 
 ];

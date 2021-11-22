@@ -33,6 +33,6 @@
             '?' => 'Check help text',
         ],
 
-    ] + Lang::get('payments::check'),
+    ] + __('payments::check'),
 
 ];

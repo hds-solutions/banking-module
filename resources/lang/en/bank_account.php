@@ -29,12 +29,16 @@
         'IBAN Number',
         '_' => 'IBAN Number',
         '?' => 'IBAN Number helper text',
+
+        'optional'  => '(optional) IBAN Number',
     ],
 
     'description'       => [
         'Description',
         '_' => 'Description',
         '?' => 'Description helper text',
+
+        'optional'  => '(optional) Description',
     ],
 
     'currency_id'       => [
@@ -71,6 +75,6 @@
         'Movements',
         '_' => 'Movements',
         '?' => 'Movements help text',
-    ] + include('bank_account_movement.php'),
+    ] + __('banking::bank_account_movement'),
 
 ];
