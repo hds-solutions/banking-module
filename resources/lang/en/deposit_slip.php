@@ -77,4 +77,27 @@
 
     ] + __('payments::check'),
 
+    'beforeSave'    => [
+        'no-cash-specified' => 'No Cash was specified for cash amount',
+    ],
+
+    'prepareIt'     => [
+        'no-lines'                  => 'The document has no cash amount or checks to deposit',
+        'cash-not-open'             => 'The Cash :cash is\'nt open',
+        'currency-missmatch'        => 'The currency of the cash :cash doesn\'t match with bank account :bankAccount',
+        'cash-no-balance'           => 'The cash :cash don\'t has enough balance to deposit cash amount',
+        'check-expired'             => 'The check :check is expired',
+        'check-already-deposited'   => 'The check :check is already deposited in the bank account :bankAccount',
+        'check-already-cashed'      => 'The check :check was cashed in to the Cash :cash',
+        'check-currency-missmatch'  => 'The currency of the check :check doesn\'t match with bank account :bankAccount',
+    ],
+
+    'completeIt'    => [
+        'cash-line'         => 'Cash deposit in :bankAccount',
+        'cash-movement'     => 'Cash deposit from :cash',
+        'check-movement'    => 'Check deposit of :check',
+
+        'check-movement-link-failed'    => 'Failed to link BankAccountMovement on DepositSlipCheck for check :check',
+    ],
+
 ];

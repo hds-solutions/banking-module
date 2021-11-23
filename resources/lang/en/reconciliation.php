@@ -35,4 +35,9 @@
 
     ] + __('payments::check'),
 
+    'prepareIt'     => [
+        'check-not-deposited'   => 'The Check :check is not deposited',
+        'check-already-paid'    => 'The Check :check is already mark as paid',
+    ],
+
 ];

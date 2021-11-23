@@ -2,8 +2,6 @@
 
 namespace HDSSolutions\Laravel\Models;
 
-use HDSSolutions\Laravel\Interfaces\Document;
-use HDSSolutions\Laravel\Traits\HasDocumentActions;
 use Illuminate\Database\Eloquent\Builder;
 
 class BankTransfer extends A_DepositSlip {

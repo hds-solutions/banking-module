@@ -28,20 +28,20 @@ class Reconciliation extends X_Reconciliation implements Document {
             // validate that check is deposited
             if (!$check->is_deposited)
                 // reject document, check not deposited
-                return $this->documentError('banking::reconciliation_check.not-deposited', [
+                return $this->documentError('banking::reconciliation.prepareIt.check-not-deposited', [
                     'check' => $check->document_number,
                 ]);
 
             // validate that check isn't paid
             if ($check->is_paid)
-                // reject document, check not deposited
-                return $this->documentError('banking::reconciliation_check.already-paid', [
+                // reject document, check already paid
+                return $this->documentError('banking::reconciliation.prepareIt.check-already-paid', [
                     'check' => $check->document_number,
                 ]);
         }
 
         // return status InProgress
-        return Document::STATUS_InProgress;
+        return self::STATUS_InProgress;
     }
 
     public final function completeIt():?string {
@@ -65,7 +65,7 @@ class Reconciliation extends X_Reconciliation implements Document {
         }
 
         // return document completed status
-        return Document::STATUS_Completed;
+        return self::STATUS_Completed;
     }
 
 }
