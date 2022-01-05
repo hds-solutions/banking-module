@@ -119,6 +119,7 @@ class DepositSlip extends A_DepositSlip {
             // create out movement on cash
             $out = $this->cash->lines()->create([
                 'cash_type'     => CashLine::CASH_TYPE_BankDeposit,
+                'transacted_at' => $this->transacted_at,
                 'currency_id'   => $this->cash->currency_id, // TODO: Fix validation to allow beforeSave() before Validation->validate()
                 'description'   => __('banking::deposit_slip.completeIt.cash-line', [
                     'account_type'      => __(BankAccount::ACCOUNT_TYPES[$this->bankAccount->account_type]),
